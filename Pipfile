@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+kiwisolver = "==1.0.1"
+matplotlib = "==3.0.2"
+numpy = "==1.15.4"
+pyparsing = "==2.3.0"
+python-dateutil = "==2.7.5"
+six = "==1.12.0"
+Cycler = "==0.10.0"
+Pillow = "==5.3.0"
+flask = "*"
+
+[requires]
+python_version = "3.7"
