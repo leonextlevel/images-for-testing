@@ -41,6 +41,8 @@ e exemplifique o resultado da geração de casos de teste.
 
 5. Crie um arquivo .env na raiz com base em `contrib/env-sample`
 
-6. Por último, se tudo estiver certo, basta executar a aplicação
-    > $ flask run
+6. Crie um banco de dados e aplique as migrações para estruturá-lo *(Só executar o comando já criará um banco sqlite, é a maneira mais simples)*
+    > $ flask db upgrade
 
+7. Por último, se tudo estiver certo, basta executar a aplicação
+    > $ flask run
