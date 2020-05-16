@@ -1,0 +1,33 @@
+{% extends 'base_register.html' %}
+
+{% block content %}
+<div class="form-login">
+    <h2>Login</h2>
+    <form method="POST" novalidate>
+        {{ form.hidden_tag() }}
+
+        <div class="form-field">
+            {{ form.username.label }}
+            {{ form.username(size=20) }}
+            {% for error in form.username.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-field">
+            {{ form.password.label }}
+            {{ form.password(size=20) }}
+            {% for error in form.password.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="remember">
+            {{ form.remember_me() }}
+            {{ form.remember_me.label }}
+        </div>
+        {{ form.submit() }}
+        <a id="registro" name="registro" href="{{ url_for('registro') }}">Novo aqui? Registre-se</a>
+    </form>
+</div>
+{% endblock content %}
