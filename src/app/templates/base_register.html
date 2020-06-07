@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <title>Images for Testing - {{ title }}</title>
     <link href="/static/css/base_register.css" rel="stylesheet">
+    <link href="/static/css/alert.css" rel="stylesheet">
     {% block extra_css %}{% endblock extra_css %}
 </head>
 <body>
@@ -17,6 +18,15 @@
         </div>
         <div class="content">
             {% block content %}{% endblock content %}
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div id="alert-area" class="alert-area">
+                {% for message in messages %}
+                <div class="notification">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
         </div>
     </div>
 </body>

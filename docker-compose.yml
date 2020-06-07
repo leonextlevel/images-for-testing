@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        APP_DIR: ${APP_DIR}
+    container_name: imagesfortesting_app
+    volumes:
+      - ./${APP_DIR}/:/usr/src/app/${APP_DIR}
+      - ./migrations/:/usr/src/app/migrations
+      - ./uploads/:/usr/src/app/src/app/uploads/
+    ports:
+      - 5000:5000
+    environment:
+      - DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/${DB_DATABASE}
+      - APP_DIR
+      - FLASK_DEBUG
+      - FLASK_APP
+      - SECRET_KEY
+      - DB_DATABASE
+      - DB_USER
+      - DB_PASSWORD
+      - DB_HOST
+      - DB_PORT
+
+    command: bash -c "flask db upgrade && flask run --host=0.0.0.0"
+
+    depends_on:
+      - db
+  db:
+    image: postgres:12.3-alpine
+    container_name: imagesfortesting_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_DATABASE}
+    ports:
+      - ${DB_PORT}:5432
+
+volumes:
+  postgres_data:
