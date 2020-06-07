@@ -1,3 +1,10 @@
 FLASK_APP=src/manage.py
 FLASK_DEBUG=1
 SECRET_KEY=abacate
+APP_DIR=src
+DB_ENGINE
+DB_DATABASE=imagesfortesting
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=db
+DB_PORT=5432

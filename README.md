@@ -22,27 +22,23 @@ e exemplifique o resultado da geração de casos de teste.
 
 ## Ferramentas
 
+* [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/)
 * [Python 3.7](https://www.python.org/downloads/release/python-376/)
 * [Pipenv](https://github.com/pypa/pipenv)
 * [Microframework Flask](https://flask.palletsprojects.com/en/1.1.x/)
 
 ## Guia de Instalação
 
-1. Tenha devidamente instalado em sua máquina o **Python 3.7** e **Pip**
+1. Tenha Docker e Docker Compose instalados (preferencialmente nas ultimas versões)
 
-2. Instale o gerenciador de dependencias e ambiente virtual **pipenv**
-    > $ pip install pipenv
+2. Siga o exemplo de `contrib/env-sample` e crie um arquivo `.env` na raiz do projeto.
 
-3. Na raiz do projeto instale as dependencias de desenvolvimento com o pipenv *(Isso irá criar um ambiente virtual com elas automaticamente)*
-    > $ pipenv sync -d
+3. Execute o projeto
+    > $ docker-compose up
 
-4. Para ativar o ambiente virtual execute na raiz do projeto
-    > $ pipenv shell
+3. *(opicional)* Outra opção para execução é subir primeiramente o container do banco
+    e em seguida o da aplicação
+    > $ docker-compose up -d db
 
-5. Crie um arquivo .env na raiz com base em `contrib/env-sample`
-
-6. Crie um banco de dados e aplique as migrações para estruturá-lo *(Só executar o comando já criará um banco sqlite, é a maneira mais simples)*
-    > $ flask db upgrade
-
-7. Por último, se tudo estiver certo, basta executar a aplicação
-    > $ flask run
+    > $ docker-compose run --service-ports --rm web
