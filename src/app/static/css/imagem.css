@@ -1,0 +1,24 @@
+input[type='file'] {
+    display: none;
+}
+
+.input-image {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.input-image:hover {
+    filter: brightness(90%);
+}
+
+.upload-btn {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    border-style: none;
+}

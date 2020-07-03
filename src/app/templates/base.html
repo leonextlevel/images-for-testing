@@ -35,6 +35,7 @@
             {% endwith %}
         </div>
     </div>
+    {% block extra_js %}{% endblock extra_js %}
     <script>
         function getActiveMenu(){
             let element = {{ title }};

@@ -10,7 +10,6 @@ services:
     volumes:
       - ./${APP_DIR}/:/usr/src/app/${APP_DIR}
       - ./migrations/:/usr/src/app/migrations
-      - ./uploads/:/usr/src/app/src/app/uploads/
     ports:
       - 5000:5000
     environment:

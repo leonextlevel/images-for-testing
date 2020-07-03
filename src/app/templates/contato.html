@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
 
+{% block extra_css %}
+<link href="/static/css/contato.css" rel="stylesheet">
+{% endblock extra_css %}
+
 {% block content %}
-<h1>Contato Page</h1>
+<div class="contato">
+    <h2 class="titulo">EM CASO DE DÚVIDAS OU FEEDBACK</h2>
+    <label class="value">leandro.bueno@fatec.sp.gov.br</label>
+    <h2 class="redes-sociais">Redes Sociais</h2>
+    <div class="redes">
+        <a target="_blank" href="https://www.linkedin.com/in/leandro-lopes-bueno/">
+            <img class="icon" src="/static/images/social_linkedin_icon.png">
+        </a>
+        <a target="_blank" href="https://github.com/llbueno">
+            <img class="icon" src="/static/images/social_github_icon.png">
+        </a>
+        <a target="_blank" href="https://www.facebook.com/llbueno1">
+            <img class="icon" src="/static/images/social_facebook_icon.png">
+        </a>
+        <a target="_blank" href="https://www.instagram.com/leandro.lbueno/">
+            <img class="icon" src="/static/images/social_instagram_icon.png">
+        </a>
+    </div>
+</div>
 {% endblock content %}

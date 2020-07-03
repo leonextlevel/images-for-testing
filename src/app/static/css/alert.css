@@ -13,8 +13,7 @@
     position: fixed;
     width: 300px;
     bottom: 5px;
-    right: 0px;
-    left: 0px;
+    right: 15px;
     justify-content: center;
     z-index: 1;
 }
