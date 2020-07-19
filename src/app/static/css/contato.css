@@ -17,7 +17,7 @@
 }
 
 .redes-sociais {
-    margin-top: 50px;
+    margin: 50px 0 20px 0;
 }
 
 .redes {
@@ -31,4 +31,25 @@
     height: 40px;
     margin-left: 30px;
     margin-right: 30px;
+    filter: contrast(200%);
+    filter: grayscale(100%);
+}
+
+.clear {
+    filter: opacity(70%);
+}
+
+.icon:hover {
+    filter: contrast(100%);
+    filter: grayscale(0%);
+}
+
+@media (max-width: 800px) {
+    .icon {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .value {
+        font-size: 16px;
+    }
 }

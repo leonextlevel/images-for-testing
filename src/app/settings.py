@@ -10,4 +10,5 @@ class Config:
         'sqlite:///' + os.path.join(BASE_DIR, 'sqlite3.db')
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/static/uploads/'
+    # UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/static/uploads/'
+    MEDIA_PATH = '/static/assets/'

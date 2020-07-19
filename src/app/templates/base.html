@@ -6,6 +6,7 @@
     <title>Images for Testing - {{ title }}</title>
     <link href="/static/css/base.css" rel="stylesheet">
     <link href="/static/css/alert.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/388a226fb7.js" crossorigin="anonymous"></script>
     {% block extra_css %}{% endblock extra_css %}
 </head>
 <body>
@@ -16,10 +17,22 @@
                 <h4>sua solução de imagens para casos de teste</h4>
             </div>
             <div class="nav">
-                <a id="home" href="{{ url_for('home') }}">Home</a>
-                <a id="imagem" href="{{ url_for('imagem') }}">Imagem</a>
-                <a id="contato" href="{{ url_for('contato') }}">Contato</a>
-                <a id="sobre" href="{{ url_for('sobre') }}">Sobre</a>
+                <a id="home" href="{{ url_for('home') }}">
+                    <span class="text-nav">Home</span>
+                    <i class="fas fa-home"></i>
+                </a>
+                <a id="imagem" href="{{ url_for('imagem') }}">
+                    <span class="text-nav">Imagem</span>
+                    <i class="fas fa-image"></i>
+                </a>
+                <a id="contato" href="{{ url_for('contato') }}">
+                    <span class="text-nav">Contato</span>
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a id="sobre" href="{{ url_for('sobre') }}">
+                    <span class="text-nav">Sobre</span>
+                    <i class="far fa-question-circle"></i>
+                </a>
             </div>
         </div>
         <div class="content">

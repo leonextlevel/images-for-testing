@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
@@ -30,5 +31,9 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('E-mail já existente.')
 
 
-class ImagesForm(FlaskForm):
-    pass
+class ImageForm(FlaskForm):
+    image = FileField(validators=[FileRequired(), FileAllowed(['png', 'jpg', 'jpeg'], 'Somente imagem!')])
+    submit = SubmitField('Salvar')
+
+class GenerateImageForm(FlaskForm):
+    submit = SubmitField('Gerar')

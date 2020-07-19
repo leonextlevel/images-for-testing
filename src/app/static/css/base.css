@@ -46,6 +46,49 @@ body {
     background-color: #2a4747;
 }
 
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
 .content {
     padding: 50px 150px;
+}
+
+@media (max-width: 600px) {
+    .content {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content {
+        padding: 50px 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    .text-nav {
+        display: none;
+    }
+    .nav a {
+        min-width: 40px;
+    }
+    .title {
+        flex-direction: column;
+        padding-left: 10px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
 }

@@ -5,21 +5,40 @@
 {% endblock extra_css %}
 
 {% block content %}
-<h1 style="margin-bottom: 30px;">Upload de uma imagem base</h1>
-<form action="" method=post enctype=multipart/form-data>
-    <div style="margin-bottom: 30px;">
-        <label for="selecao-imagem" class="input-image">
-            <span id="file-name">Selecionar...</span>
-        </label>
-        <input id="selecao-imagem" type=file name=file title="Escolha uma imagem">
+<div class="form-row">
+    <div class="form-section">
+        <h1 style="margin-bottom: 30px;">Enviar imagem base</h1>
+        <form method=post enctype="multipart/form-data" novalidate>
+            {{ form.hidden_tag() }}
+            <label for="image" class="input-image">
+                <span id="file-name"><i class="fas fa-image"></i> Selecionar</span>
+            </label>
+            {{ form.image }}
+            {% for error in form.image.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+
+            {{ form.submit() }}
+        </form>
     </div>
-    <input class="upload-btn" type=submit value=Upload>
-</form>
+    <div class="images-section">
+        <h1 class="images-section-title">Imagens salvas Leandro me nota</h1>
+        <div class="imgs-section">
+            {% for img in images %}
+                <a href="{{ url_for('imagem_detail', pk=img.id) }}">
+                    <img class="img-min" src="{{ img.image.url }}" >
+                </a>
+            {% else %}
+                <h4>Nenhuma imagem salva!</h4>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock content %}
 
 {% block extra_js %}
 <script>
-    var $input    = document.getElementById('selecao-imagem'),
+    var $input    = document.getElementById('image'),
         $fileName = document.getElementById('file-name');
     $input.addEventListener('change', function(){
     $fileName.textContent = this.value.split(/(\\|\/)/g).pop();

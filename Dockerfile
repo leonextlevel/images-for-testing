@@ -8,6 +8,8 @@ ENV PIPENV_ARGS=${PIPENV_ARGS}
 
 ENV WORK_DIR=/usr/src/app
 
+RUN apt update && apt install libmagickwand-dev nginx -y
+
 RUN pip install pipenv
 
 COPY ./${APP_DIR}/ ${WORK_DIR}/${APP_DIR}

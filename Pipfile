@@ -21,6 +21,8 @@ flask-migrate = "*"
 flask-login = "*"
 email-validator = "*"
 psycopg2-binary = "*"
+flask-imagealchemy = "*"
+opencv-python = "*"
 
 [requires]
 python_version = "3.7"

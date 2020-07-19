@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Home Page</h1>
+<h1>SEJA BEM-VINDO, {{ user.username|upper }}</h1>
+<h2>APRENDA A UTILIZAR O SISTEMA</h2>
+
+<h3>1. Acesse o Menu "Imagem <i class="fas fa-image"></i>"</h3>
+<img width="400px" src="/static/images/get_dados.gif">
+
+<h3>2. Selecione uma imagem do seu dispositivo para ser modificada.</h3>
+<img width="400px" src="/static/images/get_dados.gif">
+
 {% endblock content %}

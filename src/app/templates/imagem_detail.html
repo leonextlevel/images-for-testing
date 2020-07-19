@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<link href="/static/css/imagem.css" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="form-row">
+    <a class="images-section-btn" href="{{ url_for('download_zip', pk=obj.id) }}"><i class="fas fa-download"></i></a>
+    <div class="form-section">
+        <img src="{{ obj.image.url }}" width="400px" class="img-detail">
+        <form method=post enctype="multipart/form-data" novalidate>
+            {{ form.hidden_tag() }}
+            {{ form.submit() }}
+        </form>
+    </div>
+    <div class="images-section">
+        <div class="imgs-section">
+            {% for img in filhos %}
+                <a href="{{ url_for('download', pk=img.id)}}">
+                    <img class="img-min" src="{{ img.image.url }}" >
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <br>
+</div>
+{% endblock content %}

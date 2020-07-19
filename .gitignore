@@ -127,3 +127,5 @@ dmypy.json
 *sqlite3.db*
 
 uploads/
+
+assets/
