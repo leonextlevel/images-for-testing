@@ -15,10 +15,14 @@
             {{ form.rotacionar() }}
             {{ form.zoom.label }}
             {{ form.zoom() }}
-            {{ form.preto_branco.label }}
-            {{ form.preto_branco() }}
-            {{ form.desfoque.label }}
-            {{ form.desfoque() }}
+            <div class="row check">
+                {{ form.preto_branco() }}
+                {{ form.preto_branco.label }}
+            </div>
+            <div class="row check">
+                {{ form.desfoque() }}
+                {{ form.desfoque.label }}
+            </div>
             {{ form.submit() }}
         </form>
     </div>

@@ -80,14 +80,19 @@ a { text-decoration: none; }
 
 .img-min:hover { filter: brightness(85%); }
 
-#rotacionar {
+#rotacionar, #zoom {
     width: 100%;
     border: 0;
     border-bottom: 1px solid grey;
     outline: 0;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: grey;
-    margin: 4px 0
+    margin: .2em 0 .8em 0;
+    background: transparent;
+}
+
+.check {
+    margin-bottom: .6em;
 }
 
 @media (min-width:320px) {
