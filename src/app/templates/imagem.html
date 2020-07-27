@@ -22,7 +22,7 @@
         </form>
     </div>
     <div class="images-section">
-        <h1 class="images-section-title">Imagens salvas Leandro me nota</h1>
+        <h1 class="images-section-title">Imagens salvas</h1>
         <div class="imgs-section">
             {% for img in images %}
                 <a href="{{ url_for('imagem_detail', pk=img.id) }}">

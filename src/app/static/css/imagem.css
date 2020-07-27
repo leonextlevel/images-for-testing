@@ -80,6 +80,16 @@ a { text-decoration: none; }
 
 .img-min:hover { filter: brightness(85%); }
 
+#rotacionar {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid grey;
+    outline: 0;
+    font-size: 1.3rem;
+    color: grey;
+    margin: 4px 0
+}
+
 @media (min-width:320px) {
     .input-image {
         font-size: 16px;

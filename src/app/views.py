@@ -10,7 +10,7 @@ from werkzeug.datastructures import FileStorage
 from app.forms import LoginForm, RegistrationForm, ImageForm, GenerateImageForm
 from app.models import User, UserImage
 from app.utils import allowed_file
-from app.transform import img_rotated
+from app.transform import img_transform
 
 
 @app.route('/imagem/download-zip/<int:pk>')
@@ -82,7 +82,6 @@ def imagem():
     form = ImageForm()
     if form.validate_on_submit():
         file = form.image.data
-        # import pdb; pdb.set_trace()
         user_image = UserImage(user=current_user, image=file)
         db.session.add(user_image)
         db.session.commit()
@@ -98,9 +97,14 @@ def imagem_detail(pk):
     imagem = UserImage.query.get(pk)
     form = GenerateImageForm()
     if form.validate_on_submit():
-        nw_image = img_rotated(imagem.image.url)
-        
-        # import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()s
+        nw_image = img_transform(
+            imagem.image.url,
+            rotacao=form.data['rotacionar'],
+            zoom=form.data['zoom'],
+            force_gray=form.data['preto_branco'],
+            desfoque=form.data['desfoque'],
+        )
         user_image = UserImage(user=current_user, image=nw_image, parent=imagem.id)
         db.session.add(user_image)
         db.session.commit()

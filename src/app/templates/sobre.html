@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
 
+{% block extra_css %}
+<link href="/static/css/sobre.css" rel="stylesheet">
+{% endblock extra_css %}
+
 {% block content %}
-<h1>Sobre Page</h1>
+<h3 class="titulo">
+    Sistema para geração de casos de teste de imagens digitais.
+</h3>
+
+<p class="paragrafo">
+    Muitos sistemas utilizados em reconhecimento de imagens necessitam de casos de teste para avaliar
+    sua robustez em relação a diversos fatores, tais como reamostragem, transformações afins, etc. A geração de
+    imagens de teste pode se tornar uma tarefa fastidiosa caso não seja automatizada. Esse trabalho preocupa-se
+    com especificação e com o desenvolvimento de um sistema para geração de casos de teste envolvendo diversas
+    transformações associadas a imagens digitais.
+</p>
+
+<p class="paragrafo">
+    Esse projeto é um Trabalho de Gradução (TG) desenvolvido sob o formato "Relatório Técnico"
+    da FATEC São José dos Campos - Profº Jessen Vidal, na disciplina de Laboratório de Engenharia de Software.
+</p>
+
+<p class="paragrafo">
+    ALUNO: Leandro Lopes Bueno.
+</p>
+
+<p class="paragrafo">
+    ORIENTADOR: Fabricio Galande Marques de Carvalho.
+</p>
+
 {% endblock content %}

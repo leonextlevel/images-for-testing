@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed, FileRequired
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, FloatField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
 
@@ -36,4 +36,8 @@ class ImageForm(FlaskForm):
     submit = SubmitField('Salvar')
 
 class GenerateImageForm(FlaskForm):
+    rotacionar = IntegerField(default=0)
+    zoom = FloatField(default=1.0)
+    preto_branco = BooleanField('Preto e Branco', default=False)
+    desfoque = BooleanField('Aplicar Desfoque', default=False)
     submit = SubmitField('Gerar')

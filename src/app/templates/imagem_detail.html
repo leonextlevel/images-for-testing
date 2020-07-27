@@ -11,6 +11,14 @@
         <img src="{{ obj.image.url }}" width="400px" class="img-detail">
         <form method=post enctype="multipart/form-data" novalidate>
             {{ form.hidden_tag() }}
+            {{ form.rotacionar.label }}
+            {{ form.rotacionar() }}
+            {{ form.zoom.label }}
+            {{ form.zoom() }}
+            {{ form.preto_branco.label }}
+            {{ form.preto_branco() }}
+            {{ form.desfoque.label }}
+            {{ form.desfoque() }}
             {{ form.submit() }}
         </form>
     </div>
