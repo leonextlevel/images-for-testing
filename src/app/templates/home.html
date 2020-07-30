@@ -1,13 +1,26 @@
 {% extends 'base.html' %}
 
+{% block extra_css %}
+<link href="/static/css/home.css" rel="stylesheet">
+{% endblock extra_css %}
+
 {% block content %}
-<h1>SEJA BEM-VINDO, {{ user.username|upper }}</h1>
-<h2>APRENDA A UTILIZAR O SISTEMA</h2>
+<h1 class="welcome">SEJA BEM-VINDO, {{ user.username|upper }}</h1>
 
-<h3>1. Acesse o Menu "Imagem <i class="fas fa-image"></i>"</h3>
-<img width="400px" src="/static/images/get_dados.gif">
-
-<h3>2. Selecione uma imagem do seu dispositivo para ser modificada.</h3>
-<img width="400px" src="/static/images/get_dados.gif">
-
+<h2 class="subtitulo-home">APRENDA A UTILIZAR O SISTEMA</h2>
+<div class="instructions">
+    <h3 class="instruction">1. Acesse o Menu "Imagem <i class="fas fa-image"></i>" presente no menu superior.</h3>
+    
+    <h3 class="instruction">2. Selecione uma imagem do seu dispositivo para ser modificada.</h3>
+    
+    <h3 class="instruction">3. Clique em salvar, ocorrendo tudo certo a imagem irá para "Imagens Salvas".</h3>
+    
+    <h3 class="instruction">4. Selecione a imagem que deseja modificar clicando sobre ela.</h3>
+    
+    <h3 class="instruction">5. Um formulário para aplicar as modificações ficará disponível, preencha com as modificações que deseja.</h3>
+    
+    <h3 class="instruction">6. Clique em "Gerar" para criar uma nova imagem com as modicações. Gere quantas imagens preferir.</h3>
+    
+    <h3 class="instruction">7. Por último é possível baixar uma imagem em particular clicando sobre ela, ou então baixar um .zip com todas clicando no botão "<i class="fas fa-download"></i>"</h3>
+</div>
 {% endblock content %}

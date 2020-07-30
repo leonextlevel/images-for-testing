@@ -78,7 +78,7 @@ body {
         display: none;
     }
     .nav a {
-        min-width: 40px;
+        min-width: 30px;
     }
     .title {
         flex-direction: column;

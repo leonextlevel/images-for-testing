@@ -1,0 +1,23 @@
+.welcome, .subtitulo-home, .instruction {
+    text-align: center;
+}
+
+.welcome, .subtitulo-home {
+    margin-bottom: 40px;
+}
+
+.subtitulo-home {
+    margin-bottom: 25px;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instruction {
+    max-width: 610px;
+    margin-bottom: 15px;
+    text-align: justify;
+}

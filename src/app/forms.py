@@ -36,7 +36,7 @@ class ImageForm(FlaskForm):
     submit = SubmitField('Salvar')
 
 class GenerateImageForm(FlaskForm):
-    rotacionar = IntegerField(default=0)
+    rotacionar = IntegerField('Rotacionar (graus)', default=0)
     zoom = FloatField(default=1.0)
     preto_branco = BooleanField('Preto e Branco', default=False)
     desfoque = BooleanField('Aplicar Desfoque', default=False)
