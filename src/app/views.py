@@ -18,7 +18,6 @@ def download_zip(pk):
     memory_file = BytesIO()
     zf = zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_STORED)
     files = [f.image.url for f in UserImage.query.filter_by(parent=pk)]
-    # import pdb; pdb.set_trace()
     for file in files:
         zf.write(file, os.path.basename(file))
     zf.close()
@@ -29,7 +28,6 @@ def download_zip(pk):
 @app.route('/imagem/download/<pk>', methods=['GET'])
 def download(pk):
     image = UserImage.query.get(pk).image.url
-    # import pdb; pdb.set_trace()
     return send_file(image, as_attachment=True)
 
 
@@ -97,7 +95,6 @@ def imagem_detail(pk):
     imagem = UserImage.query.get(pk)
     form = GenerateImageForm()
     if form.validate_on_submit():
-        # import pdb; pdb.set_trace()s
         nw_image = img_transform(
             imagem.image.url,
             rotacao=form.data['rotacionar'],
