@@ -20,6 +20,10 @@ digitais.
 **PROPOSTA:** O trabalho desenvolverá tanto os módulos para execução de tais transformações, como um sistema web que os utilize
 e exemplifique o resultado da geração de casos de teste.
 
+## Vídeo de demonstração
+
+[Acesse no youtube](https://youtu.be/e8fKWXphkb0)
+
 ## Ferramentas
 
 * [Docker](https://www.docker.com/)
@@ -34,10 +38,13 @@ e exemplifique o resultado da geração de casos de teste.
 
 2. Siga o exemplo de `contrib/env-sample` e crie um arquivo `.env` na raiz do projeto.
 
-3. Execute o projeto
+3. Execute um build com docker
+    > $ docker-compose build
+
+4. Execute o projeto
     > $ docker-compose up
 
-3. *(opicional)* Outra opção para execução é subir primeiramente o container do banco
+4. *(opicional)* Outra opção para execução é subir primeiramente o container do banco
     e em seguida o da aplicação
     > $ docker-compose up -d db
 
